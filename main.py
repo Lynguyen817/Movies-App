@@ -1,4 +1,5 @@
 import movie_storage
+import random
 
 
 def movies_database(movie):
@@ -26,7 +27,7 @@ def movies_database(movie):
         if user_choice == 3:
             delete_movies()
         if user_choice == 4:
-            update_movies()
+            update_movies(movie)
         if user_choice == 5:
             statistics(movie)
         if user_choice == 6:
@@ -109,7 +110,7 @@ def update_movies(title):
 def statistics(movies):
     # Average rating in the database
     movies = movie_storage.list_movies()
-    ratings = movies["imdbRating"]
+    ratings = movies["rating"]
     sum_of_rating = 0
     total_movies = 0
     for rating in movies.values():
@@ -153,7 +154,7 @@ def random_movies(movies):
 
     for item in movies.items():
         random.choice(item)
-    print(f"Your movie for tonight: {item[0]}, it's rated {item[1]}")
+    print(f"Your movie for tonight: {item[0]}, it's rated {item[1]['rating']}")
 
 
 def search_movies(movies):
@@ -166,7 +167,8 @@ def search_movies(movies):
         if movie_search in name:
             if name not in search_movies_list:
                 search_movies_list[name] = rate
-            print(f"{name}, {rate}")
+            print(f"{name}, Year: {rate['year']}, Rating: {rate['rating']}")
+    print(f"Movie {movie_search} is not in the list.")
 
 
 def movies_sorted_by_rating(movies):

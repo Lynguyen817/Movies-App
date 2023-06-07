@@ -53,11 +53,12 @@ def delete_movies(title):
     return
 
 
-def update_movies(title, rating):
+def update_movies(rating):
     """Updates a movie from the movies database"""
     movies_data = list_movies()
+    print(movies_data)
     title = movies_data["Title"]
-    rating = movies_data["imdbRating"]
+    rating = movies_data["rating"]
     movies_update = movies_data.update({title: rating})
     with open("data.json", "w") as save_file:
         json.dump(movies_data, save_file)
