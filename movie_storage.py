@@ -53,13 +53,18 @@ def delete_movies(title):
     return
 
 
-def update_movies(rating):
+def update_movies(title, new_rating):
     """Updates a movie from the movies database"""
     movies_data = list_movies()
     print(movies_data)
-    title = movies_data["Title"]
-    rating = movies_data["rating"]
-    movies_update = movies_data.update({title: rating})
-    with open("data.json", "w") as save_file:
-        json.dump(movies_data, save_file)
-    return movies_update, rating
+    #movie_update = {}
+    for key, val in movies_data.items():
+        if title == key:
+            val["rating"] = new_rating
+        movie_update = movies_data.update({key: new_rating})
+        print(movie_update)
+    #     with open("data.json", "w") as save_file:
+    #     json.dump(movie_update, save_file)
+    # print(movies_data)
+
+

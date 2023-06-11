@@ -3,6 +3,10 @@ import random
 
 
 def movies_database(movie):
+    """
+        Show all the options to the user. Return the result of each user's choice.
+        Return the list of the options after the user choose 1 option and press enter.
+    """
     for choice in range(0, 100):
         print("""
         Menu:
@@ -42,6 +46,7 @@ def movies_database(movie):
 
 
 def main():
+    """ Run the movie_database associate with movie_storage. """
     print("********** My Movies Database **********")
     movies_database(movie_storage)
 
@@ -108,20 +113,29 @@ def update_movies(title):
 
 
 def statistics(movies):
+    """
+        Return the average rating of all movies in the list.
+        Return the median rate.
+        Return the best movie with its rating.
+        Return the worst movie with its rating.
+    """
     # Average rating in the database
     movies = movie_storage.list_movies()
-    ratings = movies["rating"]
     sum_of_rating = 0
     total_movies = 0
-    for rating in movies.values():
-        sum_of_rating += float(ratings)
-        total_movies += 1
-        average = round(float(sum_of_rating / total_movies), 2)
+    for key, value in movies.items():
+        rating = value["rating"]
+        if rating == "N/A":
+            pass
+        else:
+            sum_of_rating += float(rating)
+            total_movies += 1
+            average = round(float(sum_of_rating / total_movies), 2)
     print(f"Average rating: {average}")
 
     # Median rating
-    for rating in movies.values():
-        rating_sorted_list = sorted(ratings)
+    for rate in movies.values():
+        rating_sorted_list = sorted(rate["rating"])
         n = len(rating_sorted_list)
         if n % 2 == 0:
             median = (rating_sorted_list[n // 2 - 1] + rating_sorted_list[n // 2]) / 2
@@ -133,22 +147,29 @@ def statistics(movies):
     list_of_best_movie = {}
     max_rate = 0
     for name, rate in movies.items():
-        if float(ratings) > max_rate:
-            max_rate = float(ratings)
-            list_of_best_movie[name] = max_rate
-            print(f"Best Movie: {name}, {max_rate}")
+        if rate["rating"] == "N/A":
+            pass
+        else:
+            if float(rate["rating"]) > max_rate:
+                max_rate = float(rate["rating"])
+                list_of_best_movie[name] = max_rate
+    print(f"Best Movie: {name}, {max_rate}")
 
     # The worst movie
     list_of_worst_movie = {}
-    min_rate = float(ratings)
     for name, rate in movies.items():
-        if float(ratings) < min_rate:
-            min_rate = float(ratings)
-            list_of_worst_movie[name] = min_rate
-            print(f"Worst movie: {name}, {min_rate}")
+        if rate["rating"] == "N/A":
+            pass
+        else:
+            min_rate = float(rate["rating"])
+            if float(rate["rating"]) < min_rate:
+                min_rate = float(rate["rating"])
+                list_of_worst_movie[name] = min_rate
+    print(f"Worst movie: {name}, {min_rate}")
 
 
 def random_movies(movies):
+    """ Get a random movie from the list of movies. """
     # Get the data from the JSON file
     movies = movie_storage.list_movies()
 
@@ -158,6 +179,7 @@ def random_movies(movies):
 
 
 def search_movies(movies):
+    """ Search a movie by name."""
     movie_search = input("Enter part of movie name: ")
     # Get the data from the JSON file
     movies = movie_storage.list_movies()
@@ -172,13 +194,20 @@ def search_movies(movies):
 
 
 def movies_sorted_by_rating(movies):
-    # Get the data from the JSON file
+    """
+        Get the data from JSON file
+        then sort them by rating from highest to lowest.
+    """
     movies = movie_storage.list_movies()
 
-    movies_sorted_list = sorted(movies.items(), key=lambda x: x[1], reverse=True)
-    for movieName, rating in movies_sorted_list:
-        movies[movieName] = rating
-        print(f"{movieName}: {rating}")
+    new_list = []
+    for name, rating in movies.items():
+        movies[name] = rating
+        rate = rating["rating"]
+        new_list.append([name, rate])
+    new_sorted_list = sorted(new_list, key=lambda x: x[1], reverse=True)
+    for i in new_sorted_list:
+        print(f'{i[0]}: {i[1]}')
 
 
 def serialize_movie(movie_obj):
