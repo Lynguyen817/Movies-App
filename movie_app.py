@@ -38,6 +38,44 @@ class MovieApp:
                 average = round(float(sum_of_rating / total_movies), 2)
         print(f"Average rating: {average}")
 
+        # Median rating
+        for rate in movies.values():
+            rating_sorted_list = sorted(rate["rating"])
+            n = len(rating_sorted_list)
+            if n % 2 == 0:
+                median = (rating_sorted_list[n // 2 - 1] + rating_sorted_list[n // 2]) / 2
+            else:
+                median = rating_sorted_list[n // 2]
+        print(f"Median rating: {median}")
+
+        # The best movie
+        list_of_best_movie = {}
+        max_rate = 0
+        for name, rate in movies.items():
+            if rate["rating"] == "N/A":
+                pass
+            else:
+                if float(rate["rating"]) > max_rate:
+                    max_rate = float(rate["rating"])
+                    list_of_best_movie[name] = max_rate
+        for k, v in list_of_best_movie.items():
+            if v == max_rate:
+                print(f"Best Movie: {k}, {v}")
+
+        # The worst movie
+        list_of_worst_movie = {}
+        for key, value in movies.items():
+            if value["rating"] == "N/A":
+                pass
+            else:
+                min_rate = float(value["rating"])
+                list_of_worst_movie[key] = min_rate
+        for name, rating in list_of_worst_movie.items():
+            if rating < min_rate:
+                min_rate = rating
+                print(f"Worst movie: {name}, {min_rate}")
+
+
     def _command_random_movie(self):
         """ Get a random movie from the list of movies. """
         # Get the data from the JSON file
