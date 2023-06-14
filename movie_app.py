@@ -17,6 +17,44 @@ class MovieApp:
             print(f'{key}: {value["rating"]}')
         print(f'{total} movies in total.')
 
+    def _command_add_movie(self):
+        """Adds a movie to the movies database"""
+        # Get the data from the JSON file
+        movies = self._storage.list_movies()
+
+        title = input("Enter new movie name:")
+        if title in movies:
+            print(f"Movie {title} already exist!")
+            return
+
+        # Add the movie and save the data to the JSON file
+        self._storage.add_movie(title)
+
+    def _command_delete_movie(self):
+        """Deletes a movie from the movies database"""
+        # Get the data from the JSON file
+        movies = self._storage.list_movies()
+        # Delete the movie
+        movie_name = input("Enter movies name to delete:")
+        if movie_name not in movies:
+            print("This movie doesn't exist.")
+        else:
+            self._storage.delete_movie(movie_name)
+            print(f"Movie {movie_name} successfully deleted")
+
+    def _command_update_movie(self):
+        """Updates a movie from the movies database"""
+        # Get the data from the JSON file
+        movies = self._storage.list_movies()
+        # Update the move
+        movie_name = input("Enter movies name:")
+        if movie_name not in movies:
+            print("This movie doesn't exist.")
+        else:
+            new_rating = input("Enter new movie rating(0-10):")
+            self._storage.update_movie(movie_name, new_rating)
+            print(f"Movie {movie_name} successfully updated")
+
     def _command_movie_statistics(self):
         """
                 Return the average rating of all movies in the list.
@@ -74,7 +112,6 @@ class MovieApp:
             if rating < min_rate:
                 min_rate = rating
                 print(f"Worst movie: {name}, {min_rate}")
-
 
     def _command_random_movie(self):
         """ Get a random movie from the list of movies. """
@@ -185,11 +222,11 @@ class MovieApp:
             if user_choice == 1:
                 self._command_list_movies()
             if user_choice == 2:
-                StorageJson.add_movie()
+                self._command_add_movie()
             if user_choice == 3:
-                StorageJson.delete_movie()
+                self._command_delete_movie()
             if user_choice == 4:
-                StorageJson.update_movie()
+                self._command_update_movie()
             if user_choice == 5:
                 self._command_movie_statistics()
             if user_choice == 6:

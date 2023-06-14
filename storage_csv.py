@@ -1,13 +1,14 @@
+
 from istorage import IStorage
 import requests
-import json
 
 
 API_KEY = "cfb1ce63"
 
 
-class StorageJson(IStorage):
+class StorageCsv(IStorage):
     """ Inherits from Storage and implements its functions."""
+
     def __init__(self, file_path):
         self.file_path = file_path
 
@@ -21,7 +22,7 @@ class StorageJson(IStorage):
             movies_saved = json.loads(movies_data)
         return movies_saved
 
-    def add_movie(self, title):
+    def add_movie(self, title, year, rating, poster):
         """
             Adds a movie to the movie database.
             Loads the information from the JSON file, add the movie,and saves it.

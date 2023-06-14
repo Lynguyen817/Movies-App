@@ -13,34 +13,6 @@ def main():
 if __name__ == "__main__":
     main()
 
-
-
-
-# def command_add_movie():
-#     """Adds a movie to the movies database"""
-#     # Get the data from the JSON file
-#     movies = movie_storage.list_movies()
-#
-#     title = input("Enter new movie name:")
-#     if title in movies:
-#         print(f"Movie {title} already exist!")
-#         return
-#
-#     # Add the movie and save the data to the JSON file
-#     movie_storage.add_movies(title)
-
-
-# def command_delete_movie():
-#     """Deletes a movie from the movies database"""
-#     # Get the data from the JSON file
-#     movies = movie_storage.list_movies()
-#     # Delete the movie
-#     movie_delete = input("Enter movies name to delete:")
-#     if movie_delete not in movies:
-#         print("This movie doesn't exist.")
-#     else:
-#         movie_storage.delete_movies(movie_delete)
-#         print(f"Movie {movie_delete} successfully deleted")
 #
 #
 # def command_update_movie(title):
