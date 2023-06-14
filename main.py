@@ -1,7 +1,5 @@
 from movie_app import MovieApp
 from storage_json import StorageJson
-import movie_storage
-import random
 
 
 def main():

@@ -1,6 +1,5 @@
-
 from istorage import IStorage
-import requests
+import csv
 
 
 API_KEY = "cfb1ce63"
@@ -17,12 +16,14 @@ class StorageCsv(IStorage):
             Returns a dictionary of dictionaries that
             contains the movies information in the database.
         """
-        with open("data.json", "r") as fileobj:
-            movies_data = fileobj.read()
-            movies_saved = json.loads(movies_data)
-        return movies_saved
+        dictionary = {}
+        with open("movies.csv", "r") as csvfile:
+            movies_data = csv.reader(csvfile)
+            #movies_dict = {rows[0]:rows[1] for row in movies_data }
+            #movies_saved = json.loads(movies_data)
+        return movies_data
 
-    def add_movie(self, title, year, rating, poster):
+    def add_movie(self, title):
         """
             Adds a movie to the movie database.
             Loads the information from the JSON file, add the movie,and saves it.
