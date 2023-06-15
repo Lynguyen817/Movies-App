@@ -56,17 +56,12 @@ class StorageJson(IStorage):
             json.dump(exist_movies_data, save_file)
         return
 
-    def update_movie(self, title, notes):
-        """Updates a movie from the movies database"""
-        self.new_rating = notes
+    def update_movie(self, title, new_rating):
+        """Updates a movie from the movies database with a new rating"""
         movies_data = self.list_movies()
-        print(movies_data)
-        # movie_update = {}
         for key, val in movies_data.items():
             if title == key:
-                val["rating"] = self.new_rating
-            movie_update = movies_data.update({key: self.new_rating})
-            print(movie_update)
-        #     with open("data.json", "w") as save_file:
-        #     json.dump(movie_update, save_file)
-        # print(movies_data)
+                val["rating"] = new_rating
+                with open("data.json", "w") as save_file:
+                    json.dump(movies_data, save_file)
+                    return movies_data

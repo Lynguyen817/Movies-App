@@ -1,5 +1,4 @@
 import random
-from storage_json import StorageJson
 
 
 class MovieApp:
