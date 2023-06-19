@@ -1,12 +1,8 @@
-title,year,rating,image
-Titanic,1995,9.2
-The Dark Knight,2002,8.8
-Schindler's List,1993,9.0,https://m.media-amazon.com/images/M/MV5BNDE4OTMxMTctNmRhYy00NWE2LTg3YzItYTk3M2UwOTU5Njg4XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg
-Short Term 12,2013,7.9,https://m.media-amazon.com/images/M/MV5BNzQ1MjQzMzM3OF5BMl5BanBnXkFtZTcwMzg3NzQ3OQ@@._V1_SX300.jpg
-Mom,2013–2021,7.3,https://m.media-amazon.com/images/M/MV5BNWI0ZjU4MzUtMTdmMy00OWVkLThhNWItNzQ4NDEyNTBiY2ZjXkEyXkFqcGdeQXVyNjg4NzAyOTA@._V1_SX300.jpg
-Toy Story,1995,8.3,https://m.media-amazon.com/images/M/MV5BMDU2ZWJlMjktMTRhMy00ZTA5LWEzNDgtYmNmZTEwZTViZWJkXkEyXkFqcGdeQXVyNDQ2OTk4MzI@._V1_SX300.jpg
-The Truman Show,1998,8.2,https://m.media-amazon.com/images/M/MV5BMDIzODcyY2EtMmY2MC00ZWVlLTgwMzAtMjQwOWUyNmJjNTYyXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SX300.jpg
-Cold Mountain,2003,7.2,https://m.media-amazon.com/images/M/MV5BMTY3NTc5NzcyOF5BMl5BanBnXkFtZTcwMDM0NjQyMQ@@._V1_SX300.jpg
-Spend,2014,N/A,https://m.media-amazon.com/images/M/MV5BMTMyM2EwMTAtZmZiYS00OTFiLWE5NzctY2JlMDIzOGJiNTNkXkEyXkFqcGdeQXVyMTA4NTk5NjE3._V1_SX300.jpg
-
-Titanic,1995,9.2,
+title,rating,year,image
+Schindler's List,9.0,1993,https://m.media-amazon.com/images/M/MV5BNDE4OTMxMTctNmRhYy00NWE2LTg3YzItYTk3M2UwOTU5Njg4XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg
+Short Term 12,7.9,2013,https://m.media-amazon.com/images/M/MV5BNzQ1MjQzMzM3OF5BMl5BanBnXkFtZTcwMzg3NzQ3OQ@@._V1_SX300.jpg
+The Truman Show,8.2,1998,https://m.media-amazon.com/images/M/MV5BMDIzODcyY2EtMmY2MC00ZWVlLTgwMzAtMjQwOWUyNmJjNTYyXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SX300.jpg
+Cold Mountain,7.2,2003,https://m.media-amazon.com/images/M/MV5BMTY3NTc5NzcyOF5BMl5BanBnXkFtZTcwMDM0NjQyMQ@@._V1_SX300.jpg
+Save the Last Dance,6.2,2001,https://m.media-amazon.com/images/M/MV5BNjkzMjFkNmQtYTQ2Yy00NTRhLWE0ZGYtNjBmYTcyOTgxNGYxL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg
+Happy,7.2,2012,https://m.media-amazon.com/images/M/MV5BMjI1NTg1MzcwM15BMl5BanBnXkFtZTcwMjA2OTU4NQ@@._V1_SX300.jpg
+Mom,7.6,2013–2021,https://m.media-amazon.com/images/M/MV5BNWI0ZjU4MzUtMTdmMy00OWVkLThhNWItNzQ4NDEyNTBiY2ZjXkEyXkFqcGdeQXVyNjg4NzAyOTA@._V1_SX300.jpg
