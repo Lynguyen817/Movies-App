@@ -1,3 +1,12 @@
-title,rating,year
-Titanic,9.2,1995
-The Dark Knight,8.8,2002
+title,year,rating,image
+Titanic,1995,9.2
+The Dark Knight,2002,8.8
+Schindler's List,1993,9.0,https://m.media-amazon.com/images/M/MV5BNDE4OTMxMTctNmRhYy00NWE2LTg3YzItYTk3M2UwOTU5Njg4XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg
+Short Term 12,2013,7.9,https://m.media-amazon.com/images/M/MV5BNzQ1MjQzMzM3OF5BMl5BanBnXkFtZTcwMzg3NzQ3OQ@@._V1_SX300.jpg
+Mom,2013–2021,7.3,https://m.media-amazon.com/images/M/MV5BNWI0ZjU4MzUtMTdmMy00OWVkLThhNWItNzQ4NDEyNTBiY2ZjXkEyXkFqcGdeQXVyNjg4NzAyOTA@._V1_SX300.jpg
+Toy Story,1995,8.3,https://m.media-amazon.com/images/M/MV5BMDU2ZWJlMjktMTRhMy00ZTA5LWEzNDgtYmNmZTEwZTViZWJkXkEyXkFqcGdeQXVyNDQ2OTk4MzI@._V1_SX300.jpg
+The Truman Show,1998,8.2,https://m.media-amazon.com/images/M/MV5BMDIzODcyY2EtMmY2MC00ZWVlLTgwMzAtMjQwOWUyNmJjNTYyXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SX300.jpg
+Cold Mountain,2003,7.2,https://m.media-amazon.com/images/M/MV5BMTY3NTc5NzcyOF5BMl5BanBnXkFtZTcwMDM0NjQyMQ@@._V1_SX300.jpg
+Spend,2014,N/A,https://m.media-amazon.com/images/M/MV5BMTMyM2EwMTAtZmZiYS00OTFiLWE5NzctY2JlMDIzOGJiNTNkXkEyXkFqcGdeQXVyMTA4NTk5NjE3._V1_SX300.jpg
+
+Titanic,1995,9.2,

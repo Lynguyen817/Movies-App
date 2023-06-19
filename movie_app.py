@@ -18,7 +18,7 @@ class MovieApp:
 
     def _command_add_movie(self):
         """Adds a movie to the movies database"""
-        # Get the data from the JSON file
+        # Get the data from the CSV file
         movies = self._storage.list_movies()
 
         title = input("Enter new movie name:")
@@ -26,7 +26,7 @@ class MovieApp:
             print(f"Movie {title} already exist!")
             return
 
-        # Add the movie and save the data to the JSON file
+        # Add the movie and save the data to the CSV file
         self._storage.add_movie(title)
 
     def _command_delete_movie(self):
